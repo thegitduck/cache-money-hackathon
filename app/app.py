@@ -10,7 +10,7 @@ DB = f"{get_proj_dir()}/database.db"
 def get_locations():
 	if request.method == 'GET':
 	  with sql.connect(DB) as conn:
-	  	return dict(results=[tuple(row) for row in conn.execute("SELECT * FROM Trucks").fetchall()])
+	  	return jsonify(dict(results=[tuple(row) for row in conn.execute("SELECT * FROM Trucks").fetchall()]))
 
 	elif request.method == 'POST':
 		with sql.connect(DB) as conn:
