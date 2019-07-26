@@ -1,4 +1,5 @@
 from helpers import *
+from json import loads
 from flask import Flask, jsonify, request
 import sqlite3 as sql
 from geocoder import ip
@@ -10,14 +11,15 @@ DB = f"{get_proj_dir()}/database.db"
 def get_locations():
 	if request.method == 'GET':
 	  with sql.connect(DB) as conn:
-	  	return jsonify(dict(results=[tuple(row) for row in conn.execute("SELECT * FROM Trucks").fetchall()]))
+	  	return jsonify(dict(results=[tuple(row) for row in conn.execute("SELECT Name, Latitude, Longitude FROM Trucks").fetchall()]))
 
 	elif request.method == 'POST':
 		with sql.connect(DB) as conn:
 			req_data = request.get_json(force=True)
-			coordinates = ip('me').latlng
+			r = request.get('http://freegeoip.net/json')
+			j = loads(r.text)
 			try:
-				conn.execute(f"INSERT INTO Trucks (Name, Latitude, Longitude) VALUES ('{req_data['name']}', {coordinates[0]}, {coordinates[1]});")
+				conn.execute(f"INSERT INTO Trucks (Name, Latitude, Longitude) VALUES ('{req_data['name']}', {j['latitude']}, {j['longitude']});")
 			except sql.IntegrityError:
 				return "failure Truck already exists"
 			return "success"		
