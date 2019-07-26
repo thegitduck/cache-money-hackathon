@@ -16,10 +16,8 @@ def get_locations():
 	elif request.method == 'POST':
 		with sql.connect(DB) as conn:
 			req_data = request.get_json(force=True)
-			r = request.get('http://freegeoip.net/json')
-			j = loads(r.text)
 			try:
-				conn.execute(f"INSERT INTO Trucks (Name, Latitude, Longitude) VALUES ('{req_data['name']}', {j['latitude']}, {j['longitude']});")
+				conn.execute(f"INSERT INTO Trucks (Name, Latitude, Longitude) VALUES ('{req_data['name']}', {req_data['latitude']}, {req_data['longitude']});")
 			except sql.IntegrityError:
 				return "failure Truck already exists"
 			return "success"		
