@@ -17,7 +17,7 @@ def get_locations():
 			req_data = request.get_json(force=True)
 			coordinates = ip('me').latlng
 			try:
-				conn.execute(f"INSERT INTO Trucks (Name, Longitude, Latitude) VALUES ('{req_data['name']}', {coordinates[0]}, {coordinates[1]});")
+				conn.execute(f"INSERT INTO Trucks (Name, Latitude, Longitude) VALUES ('{req_data['name']}', {coordinates[0]}, {coordinates[1]});")
 			except sql.IntegrityError:
 				return "failure Truck already exists"
 			return "success"		
