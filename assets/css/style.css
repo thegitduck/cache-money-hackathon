@@ -1,5 +1,5 @@
 .parallax {
-    background-image: url("images/louisvilleskyline.jpg");
+    background-image: url("..//img/louisvilleskyline.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,3 +42,8 @@
     height:80%;
 }
 
+/* Set the size of the div element that contains the map */
+#map {
+    height: 600px;  /* The height is 600 pixels */
+    width: 100%;  /* The width is the width of the web page */
+}
