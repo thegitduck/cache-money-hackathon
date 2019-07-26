@@ -2,6 +2,13 @@
     <head>
         <title>Foodies</title>
         <link href="HumFoodtruck.css" rel="stylesheet" type="text/css">
+        <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 600px;  /* The height is 600 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
     </head>
             <body>
                 <div class="parallax">
@@ -14,12 +21,39 @@
                     </div>
                 
                 <div class="row">
-                    <div class="map">
-                        <p>Click the button to get your coordinates.</p>
+
+            <!--The div element for the map -->
+                    <div id="map"></div>
+                    <script>
+            // Initialize and add the map
+                        function initMap() {
+            // The location of Louisville
+                        var louisville = {lat: 38.2568, lng: -85.7552};
+            // The map, centered at Louisville
+                        var map = new google.maps.Map(
+                        document.getElementById('map'), {zoom: 4, center: louisville});
+            // The marker, positioned at Louisville1
+                        var marker = new google.maps.Marker({position: louisville, map: map});
+}
+                    </script>
+            <!--Load the API from the specified URL
+            * The async attribute allows the browser to render the page while the API loads
+            * The key parameter will contain your own API key (which is not needed for this tutorial)
+            * The callback parameter executes the initMap() function
+            -->
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ZHtG6Lrx6J5XsHc3OZJ84AhemjCKFnM&callback=initMap">
+                    </script>
+                        
+
+                    <div class="row">
+                        <div class="coordinates">
+<p>Click the button to get your coordinates.</p>
 
 <button onclick="getLocation()">Try It</button>
 
 <p id="demo"></p>
+                            </div>
 
 <script>
 var x = document.getElementById("demo");

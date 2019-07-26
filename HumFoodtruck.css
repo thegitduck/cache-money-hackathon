@@ -1,5 +1,5 @@
 .parallax {
-    background-image: url("louisvilleskyline.jpg");
+    background-image: url("images/louisvilleskyline.jpg");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -16,6 +16,11 @@
 }
 
 .map {
+    background: lightgreen;
+    padding:65px;
+}
+
+.coordinates {
     background: lightgreen;
     padding:65px;
 }
