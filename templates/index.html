@@ -23,6 +23,13 @@
            -->
         <script async defer
            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ZHtG6Lrx6J5XsHc3OZJ84AhemjCKFnM&callback=initMap"></script>
+		<script>fetch('https://localhost:5000/locations')
+    .then(function (response) {
+        return response.text();
+    }).then(function (text) {
+        console.log('GET response text:');
+        console.log(text); // Print the greeting as text
+    });</script>
         <div class="row">
             <div class="coordinates">
               <p>Click the button to get your coordinates.</p>
