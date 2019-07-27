@@ -69,10 +69,15 @@ recieve success or fail string
 }
 ```
 The connection between our API and frontend is to come soon, but the idea is to have food trucks sign into their Food truck permission accounts, then post daily with their location. Other users will simply be able to view the map, get info about their truck, then go eat or something.
+
 We have designed this, so the map can be modular to where it can be made into an app or full stack UI.
+
 We know this is a very incomplete project, but the ideas are there and all parts are in place for success, the connection is all that is left.
+
 All the Wei in and all the Wei Wei out!!!!
+
 For every one wei in, there are two weis out.
+
 We may or may not have partnered with Mercedes, Audi, and Tesla to have our application built natively into their latest and greatest car dashboards.
 
 ##We F*** with Food Truck Friday (We stand)
