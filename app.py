@@ -16,7 +16,8 @@ CORS(app)
 def get_locations():
 	if request.method == 'GET':
 	  with sql.connect(DB) as conn:
-	  	return jsonify(dict(results=[tuple(row) for row in conn.execute("SELECT Name, Latitude, Longitude FROM Trucks").fetchall()]))
+	  	pretty_print_dict(dict(results=[tuple(row) for row in conn.execute("SELECT Name, Latitude, Longitude FROM Trucks").fetchall()]))
+	  	return "hi"
 
 	elif request.method == 'POST':
 		with sql.connect(DB) as conn:
