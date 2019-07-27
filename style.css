@@ -1,0 +1,53 @@
+.parallax {
+    background-image: url("..//img/louisvilleskyline.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+ 
+}
+
+.welcome {
+    background:lightgreen;
+    color:gray;
+    text-align:center;
+    font-size: 20px;
+    padding: 65px;
+   
+}
+
+
+
+.coordinates {
+    background: lightgreen;
+    color: gray;
+    padding:65px;
+    text-align: center;
+}
+
+.button {
+    border-radius: 12px;
+    font-size: 24px;
+    color: gray;
+}
+
+.button:hover {
+    background-color: gray;
+    color:whitesmoke;
+}
+
+.authenticity {
+    background: black;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 10px;
+    padding:20px;
+    
+}
+
+.authenticity a {
+    color: whitesmoke;
+}
+
+.empty {
+    height:63%;
+}
