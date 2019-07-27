@@ -3,9 +3,14 @@ from json import loads
 from flask import Flask, jsonify, request
 import sqlite3 as sql
 from geocoder import ip
+from flask_cors import CORS
 
 app = Flask(__name__)
 DB = f"{get_proj_dir()}/database.db"
+
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+CORS(app)
+
 
 @app.route('/locations', methods=['GET', 'POST'])
 def get_locations():
@@ -21,3 +26,5 @@ def get_locations():
 			except sql.IntegrityError:
 				return "Failure: Truck already exists"
 			return "success"		
+
+app.run()
