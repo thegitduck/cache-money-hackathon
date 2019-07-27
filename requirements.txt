@@ -1,4 +1,7 @@
 Flask
 pyyaml
-geocoder
 jsonschema
+Theano
+DeepLearningStack
+robotframework-mobilelibrary
+blockchain
