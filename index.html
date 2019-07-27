@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Foodtruck Foodies</title>
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/stuff.js"></script>
+        <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 600px;  /* The height is 600 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+    </head>
+        <body>
+            <div class="parallax">
+                <div class="row">
+                    <div class="empty"></div>
+                        <div class="twelve columns welcome">
+                            <p><h1> Welcome Foodtruck Foodies!</h1></p> 
+                            <p>Welcome to our foodtruck finder app!  Simply put, we are just a bunch of tech interns that are crazy passionate about food.  Recently, we have been tasked with creating and executing an idea for the 2019 Humanathon.  Therefore, we decided to dabble in the field of foodtrucks.....I mean who doesn't love foodtrucks?!  Our app will make foodtruck foodies have a better experience when it comes to finding their favorite foodtruck.  Enjoy!</p>
+                        </div>
+                    </div>
+            
+                
+                <div class="row">
+                    <div id="map"></div> <!--The div element for the map -->
+                    <script>
+            // Initialize and add the map
+                        function initMap() {
+            // The location of Louisville
+                        var louisville = {lat: 38.2568, lng: -85.7552};
+            // The map, centered at Louisville
+                        var map = new google.maps.Map(
+                        document.getElementById('map'), {zoom: 4, center: louisville});   
+            // The marker, positioned at Louisville
+                        var marker = new google.maps.Marker({position: louisville, map: map});}
+                    </script>
+                    
+                    
+            <!--Load the API from the specified URL
+            * The async attribute allows the browser to render the page while the API loads
+            * The key parameter will contain your own API key (which is not needed for this tutorial)
+            * The callback parameter executes the initMap() function
+            -->
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5ZHtG6Lrx6J5XsHc3OZJ84AhemjCKFnM&callback=initMap">
+                    </script>
+            </div>  
+
+            <div class="row">
+                <div class="coordinates">
+                    <button class="button" onclick="getLocation()">Click Me for Coordinates</button>
+                    <p id="demo"></p>
+                </div>
+
+                    <script>
+                        var x = document.getElementById("demo");
+
+                        function getLocation() {
+                            if (navigatodr.geolocation) {
+                                navigator.geolocation.getCurrentPosition(showPosition);
+                            } else { 
+                                x.innerHTML = "Geolocation is not supported by this browser.";
+                            }
+                            }
+
+                        function showPosition(position) {
+                                x.innerHTML = "Latitude: " + position.coords.latitude + 
+                                "<br>Longitude: " + position.coords.longitude;
+                            }
+                    </script>
+            </div>
+
+            
+                
+                <div class="row">
+                    <div class="twelve columns authenticity">
+                        <p>We certify that the content included in this website is our own original work (or is cited accurately) and accurate to our knowledge. Work included which was conducted as part of a team or individually is indicated and attributed as such to each team member.</p>
+                        <p><b>Riley Allred, Tyler Lawson, Colton Thompson, Jack Allen, and Lauren Sukumar</b></p>
+                        <p><i>CSS Framework by <a href="http://getskeleton.com/#grid"> Skeleton.</a></i></p>
+                    </div>
+                </div>
+            
+            
+        </div>     
+    </body>
+</html>
