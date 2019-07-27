@@ -80,7 +80,7 @@ For every one wei in, there are two weis out.
 
 We may or may not have partnered with Mercedes, Audi, and Tesla to have our application built natively into their latest and greatest car dashboards.
 
-## We F*** with Food Truck Friday (We stand)
+## We F*** with Food Truck Friday (We stanD)
 
 
 ```
